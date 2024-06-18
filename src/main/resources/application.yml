@@ -1,0 +1,26 @@
+server:
+  port : 8080
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: test
+    password: password
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+h2:
+  console:
+    enabled: true
+
+application:
+  security:
+    jwt:
+      secret-key: e8dced421b78db1bbaa7c7c18219019abddeb1b165eddd06de5992d72e2c22c4
+      expiration: 86400000

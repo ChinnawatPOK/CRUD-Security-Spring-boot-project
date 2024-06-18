@@ -1,0 +1,36 @@
+package com.crud.security.controller;
+
+import com.crud.security.model.auth.AuthenticationRequest;
+import com.crud.security.model.auth.AuthenticationResponse;
+import com.crud.security.model.auth.RegisterResponse;
+import com.crud.security.service.AuthenticationService;
+import com.crud.security.model.auth.RegisterRequest;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api/auth")
+@RequiredArgsConstructor
+public class AuthenticationController {
+
+  private final AuthenticationService service;
+
+  @PostMapping("/register")
+  public ResponseEntity<RegisterResponse> register(
+          @RequestBody RegisterRequest request
+  ) {
+    return ResponseEntity.ok(service.register(request));
+  }
+  @PostMapping("/authenticate")
+  public ResponseEntity<AuthenticationResponse> authenticate(
+      @RequestBody AuthenticationRequest request
+  ) {
+    return ResponseEntity.ok(service.authenticate(request));
+  }
+
+
+}
