@@ -17,6 +17,8 @@
 ## Technologies
 * Java 17
 * Spring Boot
+* Junit 5
+* H2 embedded database
 * Spring Security
 * JSON Web Tokens (JWT)
 * Maven
@@ -118,5 +120,9 @@ After that tou can try to call api get customer id 1 again, The service return d
 
 # ! If you don't add Bearer token in each /api/customer/xxx. You will got 403 Forbidden (Because I allow spring security for these APIs.).
 ![img_10.png](img_10.png)
+
+I wrote a unit test with more than 90 percent coverage for the controller and service, but not written unit test for spring security config and Jwt service.
+<img width="500" alt="image" src="https://github.com/ChinnawatPOK/CRUD-Security-Spring-boot-project/assets/60538900/20affb62-e244-4826-bcdb-b92d99a3893a">
+
 
 
